@@ -19,7 +19,8 @@ public class ShowUIRange : MonoBehaviour
     [SerializeField]
     private float m_chronosToShow = 2;
     private GameObject m_parchemin;
-    
+    [SerializeField]
+    GameObject m_eventManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -96,14 +97,13 @@ public class ShowUIRange : MonoBehaviour
             {
                 
                 ScrollElementToShow(m_scrollList[PortalNB],true);
+                
             }
             else
             {
                 ScrollElementToShow(m_scrollList[PortalNB], false);
             }
-            
-           
-            
+
         }
     }
     private void FindScrollElementUI()
