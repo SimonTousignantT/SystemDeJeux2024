@@ -11,33 +11,39 @@ public class LvlText : MonoBehaviour
     public ScriptableText m_scriptableData;
     [SerializeField]
     private GameObject m_textZone;
-    private List<string> m_pagestxt = new List<string>();
-    private int m_Page = 0;
-    private int m_PageNB;
+    private List<string> m_pagesTxt = new List<string>();
+    private int m_page = 0;
+    private int m_pageNB;
     private bool m_firstTime = true;
-    string m_txt = "";
-    // Start is called before the first frame update
+    private string m_txt = "";
+    [SerializeField]
+    private GameObject m_NameLevelZone;
+   
 
+    // Start is called before the first frame update
+    
     public void ButtonNextText()
     {
         Debug.Log("le bouton a ete click");
-        Debug.Log(m_Page + " / "+m_PageNB );
-        if (m_Page < m_PageNB - 1)
+        Debug.Log(m_page + " / "+m_pageNB );
+        if (m_page < m_pageNB - 1)
         {
             Debug.Log("demade tafficher la prochaine page");
-            m_Page += 1;
+            m_page += 1;
 
-            starCouroutine();
+            StarCouroutine();
         }
         
         
     }
     private IEnumerator TxtShow()
     {
-       
+
         //Debug.Log("sa entre dans la couroutine" + m_pagestxt.Count);
-        
-        foreach (char Char in m_pagestxt[m_Page])
+
+        //Debug.Log(m_NameLevelZone.name);
+        m_NameLevelZone.GetComponent<TextMeshPro>().SetText(m_scriptableData.LvlName);
+        foreach (char Char in m_pagesTxt[m_page])
         {
             
             m_txt += Char;
@@ -57,22 +63,22 @@ public class LvlText : MonoBehaviour
         {
             foreach (PageData data in m_scriptableData.DataPage)
             {
-                m_pagestxt.Add(data.page);
+                m_pagesTxt.Add(data.page);
             }
-            m_PageNB = m_pagestxt.Count;
+            m_pageNB = m_pagesTxt.Count;
             m_firstTime = false;
             
         }
         //Debug.Log("la couroutine est appeler");
-        m_Page = 0;
-        starCouroutine();
-
-
+        m_page = 0;
+        StarCouroutine();
+        /////
+      
 
     }
-    public void starCouroutine()
+    public void StarCouroutine()
     {
-        StopCoroutine(TxtShow());
+        StopAllCoroutines();
         m_txt = "";
         StartCoroutine(TxtShow());
     }

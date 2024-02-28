@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Parchemin
+    uniqueID: 1438560233
+    locked: 0
+  - name: Ui
+    uniqueID: 3591231703
+    locked: 0

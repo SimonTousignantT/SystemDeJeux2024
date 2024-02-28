@@ -21,6 +21,7 @@ public class ShowUIRange : MonoBehaviour
     private GameObject m_parchemin;
     [SerializeField]
     GameObject m_eventManager;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +52,7 @@ public class ShowUIRange : MonoBehaviour
         //Debug.Log(Scroll.name + "sa passer le while");
         if (Active)
         {
+            
             ///Debug.Log("un element du UI doit etre activé");
             foreach (GameObject ScrollElement in ScrollElementList)
             {
@@ -59,7 +61,8 @@ public class ShowUIRange : MonoBehaviour
                 {
                    // Debug.Log("Parchemin activation ");
                     ScrollElement.SetActive(true);
-                   // Debug.Log("ChekName//" + ScrollElement.gameObject.GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.name + "//");
+                    
+                    // Debug.Log("ChekName//" + ScrollElement.gameObject.GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.name + "//");
                     if (ScrollElement.gameObject.GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.name == "ParcheminFin")
                     {
                         //Debug.Log("le parchemin est a sa derniere animation");
@@ -67,6 +70,8 @@ public class ShowUIRange : MonoBehaviour
                         {
                             //Debug.Log("jactive tout les autre component");
                             OtherScrollElement.SetActive(true);
+                            
+                            
                         }
                     }
                 }

@@ -11,4 +11,5 @@ public class ScriptableText : ScriptableObject
         public string page;
     }
     public List<PageData> DataPage = new List<PageData>();
+    public string LvlName;
 }

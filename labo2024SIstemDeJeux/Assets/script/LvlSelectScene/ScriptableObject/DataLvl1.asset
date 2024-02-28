@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: DataLvl1
   m_EditorClassIdentifier: 
   DataPage:
-  - page: voici la page 1 du lvl 1
-  - page: page 2 du lvl 1
+  - page: apres une longue mission vous revenez dans votre village
+  - page: mais en arivant vous retrouver votre village en feux
+  - page: "des soldat du rois on tu\xE9 tout les villagois"
+  LvlName: Colere Du Hero

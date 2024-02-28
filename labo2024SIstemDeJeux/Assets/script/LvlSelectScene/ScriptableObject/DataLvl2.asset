@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: DataLvl2
   m_EditorClassIdentifier: 
   DataPage:
-  - page: page1 d lvl 2
-  - page: page 2 du lvl 2
+  - page: remplis de haine vous traquer les soldat survivant
+  - page: trouver des indice pour comprendre pourquoi le rois a tuer votre femme
+      et vos enfants
+  LvlName: Carnage du hero
