@@ -22,6 +22,12 @@ public class PlayerControl : MonoBehaviour
     private float m_offsetRotation = 75;
     [SerializeField]
     private Animator m_myAnimator;
+    private bool m_onAttack = false;
+    private List<GameObject> m_listEnemy = new List<GameObject>();
+    [SerializeField]
+    private float m_attackRange = 3;
+    [SerializeField]
+    private float m_playerStrenghtDamage = 20;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +37,7 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Move();
+        StartCoroutine(attack());
         rotate();
         
     }
@@ -52,6 +57,7 @@ public class PlayerControl : MonoBehaviour
 
     private void Move()
     {
+        m_velocityY = gameObject.GetComponent<Rigidbody>().velocity.y;
         m_myAnimator.SetBool("WalkZ+", false);
         m_myAnimator.SetBool("WalkZ-", false);
         m_myAnimator.SetBool("WalkX+", false);
@@ -82,6 +88,7 @@ public class PlayerControl : MonoBehaviour
         ///////////////gere la velocyté en X
         if (Input.GetKey(KeyCode.A))
         {
+            
             m_speed = m_walkSpeed;
             m_velocityX -= m_speed;
             if (m_velocityX < m_speed)
@@ -125,5 +132,56 @@ public class PlayerControl : MonoBehaviour
        
         gameObject.GetComponent<Rigidbody>().velocity = transform.right * m_velocityX + transform.forward * m_velocityZ + new Vector3(0, m_velocityY, 0);
     }
-   
+    private IEnumerator attack()
+    {
+        if (!m_onAttack)
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                m_onAttack = true;
+                m_myAnimator.SetBool("Attack", true);
+                //Debug.Log("mousse input");
+                yield return new WaitForSeconds(0.6f);
+                if (m_listEnemy.Count != 0)
+                {
+                    try
+                    {
+                        foreach (GameObject enemy in m_listEnemy)
+                        {
+                            if (Vector3.Distance(enemy.transform.position, gameObject.transform.position + (transform.forward*m_attackRange)) < m_attackRange)
+                            {
+                                enemy.GetComponent<Enemy>().SetDamagelifeEnemy(m_playerStrenghtDamage);
+                            }
+
+                        }
+                    }
+                    catch
+                    {
+                       //enemy mort
+                    }
+                }
+                yield return new WaitForSeconds(0.5f);
+                m_onAttack = false;
+            }
+            else
+            {
+                if (!m_onAttack)
+                {
+                    m_myAnimator.SetBool("Attack", false);
+                    Move();
+                    yield return new WaitForEndOfFrame();
+                }
+                m_onAttack = false;
+            }
+        }
+        
+    }
+    public void SetEnemy(GameObject enemy)
+    {
+        m_listEnemy.Add(enemy);
+    }
+    public void RemoveEnemy(GameObject enemy)
+    {
+        m_listEnemy.Remove(enemy);
+    }
 }
