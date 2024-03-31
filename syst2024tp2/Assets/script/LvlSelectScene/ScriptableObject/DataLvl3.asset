@@ -17,3 +17,6 @@ MonoBehaviour:
   - page: 'le rois a trhis votre confiance '
   - page: vous devez vanger votre village
   LvlName: Derniere Vengence
+  Bronze: {r: 1, g: 0.4490608, b: 0, a: 1}
+  argent: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  or: {r: 1, g: 0.8161744, b: 0, a: 1}

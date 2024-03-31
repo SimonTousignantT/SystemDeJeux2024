@@ -17,3 +17,6 @@ MonoBehaviour:
   - page: mais en arivant vous retrouver votre village en feux
   - page: "des soldat du rois on tu\xE9 tout les villagois"
   LvlName: Colere Du Hero
+  Bronze: {r: 1, g: 0.55344284, b: 0, a: 1}
+  argent: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
+  or: {r: 1, g: 0.7405456, b: 0, a: 1}

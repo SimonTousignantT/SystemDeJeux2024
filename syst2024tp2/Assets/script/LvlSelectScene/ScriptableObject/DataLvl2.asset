@@ -17,3 +17,6 @@ MonoBehaviour:
   - page: trouver des indice pour comprendre pourquoi le rois a tuer votre femme
       et vos enfants
   LvlName: Carnage du hero
+  Bronze: {r: 1, g: 0.47529262, b: 0, a: 1}
+  argent: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
+  or: {r: 1, g: 0.6944144, b: 0, a: 1}

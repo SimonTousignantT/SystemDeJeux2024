@@ -9,6 +9,8 @@ public class ButtonMenu : MonoBehaviour
     private AudioSource m_sourceAudio;
     [SerializeField]
     private AudioClip Foghorn;
+    [SerializeField]
+    private DataSave m_dataSave;
     // Start is called before the first frame update
     private void Start()
     {
@@ -18,11 +20,13 @@ public class ButtonMenu : MonoBehaviour
     {
         SceneManager.LoadScene("LvlSelector");
         m_sourceAudio.PlayOneShot(Foghorn);
+        m_dataSave.DeleteSaveFile();
     }
     public void BouttonCargerPartieOnClick()
     {
         SceneManager.LoadScene("LvlSelector");
         m_sourceAudio.PlayOneShot(Foghorn);
+
     }
     public void BouttonQuitterOnClick()
     {
