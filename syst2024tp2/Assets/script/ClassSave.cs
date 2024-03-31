@@ -11,4 +11,8 @@ public class ClassSave
     public int lvl3kill = 0;
     public int lvlScore = 0;
     public int LastLvl = 0;
+    public bool FistDiscoveryLvl1 = false;
+    public bool FistDiscoveryLvl2 = false;
+    public bool FistDiscoveryLvl3 = false;
+    public bool FinishAllGame = false;
 }
