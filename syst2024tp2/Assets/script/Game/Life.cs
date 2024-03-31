@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Life : MonoBehaviour
 {
+    [SerializeField]
     private float m_maxLife = 100;
     private float m_life;
     [SerializeField]
@@ -22,5 +24,9 @@ public class Life : MonoBehaviour
     public void SetDamageToPlayer(float damage)
     {
         m_life -= damage;
+        if(m_life <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 }

@@ -9,7 +9,11 @@ public class ScriptableText : ScriptableObject
    public struct PageData
     {
         public string page;
+       
     }
     public List<PageData> DataPage = new List<PageData>();
     public string LvlName;
+    public Color Bronze;
+    public Color argent;
+    public Color or;
 }

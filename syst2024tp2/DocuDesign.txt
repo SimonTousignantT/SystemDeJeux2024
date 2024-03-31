@@ -1,0 +1,16 @@
+-Les contrôles de votre personnage dans les niveaux;
+w,a,s,d pour se deplacer , et click gauche pour attaqué
+
+• La mécanique de « pooling » choisie et son implication dans le niveau.
+pas encore implementé
+
+• Le nombre d’objets à récolter dans tous les niveaux.
+o Ainsi que le nombre à récolter pour chaque mention.
+niveau 1 : 1 = bronze , 2 = argent , 3 = or 
+niveau 2 : 2 = bronze , 4 = argent , 6 = or 
+niveau 3 : 3 = bronze , 6 = argent , 9 = or 
+
+• La description de vos achievements
+o Titre et description
+pas encore implementé
+
