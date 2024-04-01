@@ -82,6 +82,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\TreePack1_Free\Script\TreeControll.cs" />
+    <Compile Include="Assets\script\AudioPool.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\script\Game\EndPortal.cs" />
     <Compile Include="Assets\Forst\CTI Runtime Components\CTI Runtime Components HDRP 12plus\Scripts\CTI_HDRP_CustomWind.cs" />

@@ -5,6 +5,12 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     [SerializeField]
+    AudioClip m_axeSlashSound;
+    [SerializeField]
+    AudioPool m_audioPool;
+    [SerializeField]
+    AudioClip m_growlSound;
+    [SerializeField]
     private GameObject m_player;
     [SerializeField]
     private float m_distanceAgro = 10;
@@ -55,12 +61,13 @@ public class Enemy : MonoBehaviour
         {
             if(m_onAttack)
             {
-
                 yield return new WaitForSeconds(0.542f);
+                
                 if (m_onAttack)
                 {
                     //Debug.Log("envoie les degas");
                     m_player.GetComponent<Life>().SetDamageToPlayer(7);
+                    m_audioPool.PlayMusicPool(m_axeSlashSound);
                 }
                 yield return new WaitForSeconds(1);
             }
@@ -71,6 +78,7 @@ public class Enemy : MonoBehaviour
     public void SetDamagelifeEnemy(float damage)
     {
         Debug.Log("Getdamage");
+        m_audioPool.PlayMusicPool(m_growlSound);
         m_life -= damage;
         if(m_life <= 0)
         {
