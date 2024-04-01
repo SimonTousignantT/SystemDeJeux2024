@@ -2161,7 +2161,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e4135246e5e23d40a16e98714cc6e10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_player: {fileID: 0}
+  m_axeSlashSound: {fileID: 8300000, guid: a444743014d032d44a4a832f12c208fd, type: 3}
+  m_audioPool: {fileID: 0}
+  m_growlSound: {fileID: 8300000, guid: 73515ca3393b4a840947b8ab98320be5, type: 3}
+  m_player: {fileID: 6389701902724281086, guid: 55724765c1cac554e90d2043afa982dd, type: 3}
   m_distanceAgro: 10
   m_distanceAttack: 3
   m_onAttack: 0

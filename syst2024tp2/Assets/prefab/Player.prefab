@@ -8716,6 +8716,9 @@ MonoBehaviour:
   m_myAnimator: {fileID: 8792831734158075028}
   m_attackRange: 3
   m_playerStrenghtDamage: 20
+  m_audioPool: {fileID: 0}
+  m_swordSound: {fileID: 8300000, guid: 0f4442416869a6d4e9e17e1e8907a975, type: 3}
+  m_swordHitSound: {fileID: 8300000, guid: 9ef1bb7cc755e1d48abb87002c1b9e9a, type: 3}
 --- !u!114 &820979105735564338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8768,6 +8771,10 @@ MonoBehaviour:
     lvl3kill: 0
     lvlScore: 0
     LastLvl: 0
+    FistDiscoveryLvl1: 0
+    FistDiscoveryLvl2: 0
+    FistDiscoveryLvl3: 0
+    FinishAllGame: 0
 --- !u!1 &6397969007876481424
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,6 +28,12 @@ public class PlayerControl : MonoBehaviour
     private float m_attackRange = 3;
     [SerializeField]
     private float m_playerStrenghtDamage = 20;
+    [SerializeField]
+    AudioPool m_audioPool;
+    [SerializeField]
+    AudioClip m_swordSound;
+    [SerializeField]
+    AudioClip m_swordHitSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +43,7 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         StartCoroutine(attack());
         rotate();
         
@@ -142,6 +149,7 @@ public class PlayerControl : MonoBehaviour
                 m_myAnimator.SetBool("Attack", true);
                 //Debug.Log("mousse input");
                 yield return new WaitForSeconds(0.6f);
+                m_audioPool.PlayMusicPool(m_swordSound);
                 if (m_listEnemy.Count != 0)
                 {
                     try
@@ -151,6 +159,7 @@ public class PlayerControl : MonoBehaviour
                             if (Vector3.Distance(enemy.transform.position, gameObject.transform.position + (transform.forward*m_attackRange)) < m_attackRange)
                             {
                                 enemy.GetComponent<Enemy>().SetDamagelifeEnemy(m_playerStrenghtDamage);
+                                m_audioPool.PlayMusicPool(m_swordHitSound);
                             }
 
                         }
@@ -162,6 +171,7 @@ public class PlayerControl : MonoBehaviour
                 }
                 yield return new WaitForSeconds(0.5f);
                 m_onAttack = false;
+                
             }
             else
             {
@@ -175,6 +185,7 @@ public class PlayerControl : MonoBehaviour
             }
         }
         
+
     }
     public void SetEnemy(GameObject enemy)
     {
