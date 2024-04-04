@@ -19,9 +19,12 @@ public class Enemy : MonoBehaviour
     public bool m_onAttack = false;
     private float m_maxLife = 100;
     private float m_life;
+    [SerializeField]
+    private GameObject m_arrowManager;
     // Start is called before the first frame update
     void Start()
     {
+        m_arrowManager.GetComponent<ArrowPool>().SetEnemy(gameObject);
         StartCoroutine(MakeDamage());
         m_life = m_maxLife;
         m_player.GetComponent<PlayerControl>().SetEnemy(this.gameObject);
@@ -85,7 +88,9 @@ public class Enemy : MonoBehaviour
             m_player.GetComponent<PlayerControl>().RemoveEnemy(this.gameObject);
             gameObject.GetComponent<Animator>().SetTrigger("Death");
             m_player.GetComponent<KillCount>().killAdd();
+            m_arrowManager.GetComponent<ArrowPool>().RemoveEnemy(this.gameObject);
             Destroy(this);
+
         }
     }
    
