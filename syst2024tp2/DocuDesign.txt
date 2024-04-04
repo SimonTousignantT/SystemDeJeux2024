@@ -1,8 +1,9 @@
 -Les contrôles de votre personnage dans les niveaux;
 w,a,s,d pour se deplacer , et click gauche pour attaqué
+et espace pour instancier des fleche indicateur en jeux
 
 • La mécanique de « pooling » choisie et son implication dans le niveau.
-pas encore implementé
+j'ai rajouter une mecanique de fleche pour vous aider a trouver les enemie. il ne vous donnera pas l'enemie le plus proche mais sa aide
 
 • Le nombre d’objets à récolter dans tous les niveaux.
 o Ainsi que le nombre à récolter pour chaque mention.
@@ -12,5 +13,7 @@ niveau 3 : 3 = bronze , 6 = argent , 9 = or
 
 • La description de vos achievements
 o Titre et description
-pas encore implementé
-
+easyExploration : decouvré le premier niveaux 
+mediumExploration : decouvré le deuxieme niveaux 
+HardExploration : decouvré le troisieme niveaux 
+GameComplet : finisser tout les niveaux avec la meilleur note possible
